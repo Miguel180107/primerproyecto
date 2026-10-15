@@ -6,17 +6,18 @@
     android:columnCount="4"
     android:rowCount="5"
     android:useDefaultMargins="true">
-     
+
     <!-- Display -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_columnSpan="4"
         android:background="#CFC6B8"
         android:gravity="end|center_vertical"
-        android:padding="8dp"
+        android:textAlignment="viewEnd"
+        android:padding="16dp"
         android:text="0"
-        android:textSize="24sp" />
+        android:textSize="25sp" />
 
     <Button
         android:text="1"

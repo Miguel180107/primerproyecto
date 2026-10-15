@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton
+        android:id="@+id/miImageButton"
+        android:layout_width="99dp"
+        android:layout_height="111dp"
+        android:src="@drawable/img"
+        />
+</selector>
