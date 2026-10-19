@@ -9,43 +9,116 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/texto"
         android:text="probando el text view"
         android:textColor="#CDDC39"
-        android:textStyle="bold"
         android:textSize="12sp"
+        android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
     <ToggleButton
+        android:id="@+id/miToggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/miToggleButton"
         android:text="ToggleButton"
         android:textOff="No Pulsado"
         android:textOn="pulsado"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="225dp" />
+
     <ImageButton
         android:id="@+id/miImageButton"
-        android:layout_width="99dp"
-        android:layout_height="111dp"
+        android:layout_width="130dp"
+        android:layout_height="78dp"
         android:src="@drawable/img"
-        />
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="195dp" />
 
     <EditText
         android:id="@+id/numero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingrese su numero de telefono"
+        android:hint="Ingrese su nombre"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565" />
+
+    <AutoCompleteTextView
+        android:id="@+id/miTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="Elige una opcion"
+        android:completionThreshold="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565" />
+    <Spinner
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/miSpinner"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+    <CheckBox
+        android:id="@+id/checkbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opción 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+        <RadioButton
+        android:id="@+id/radioButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opción 1" />
+
+
+        <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opción 2" />
+
+
+        <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Opción 3" />
+        </RadioGroup>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Encender/Apagar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="291dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

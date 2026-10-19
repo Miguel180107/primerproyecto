@@ -1,11 +1,15 @@
 package com.example.tema4;
 
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
+import androidx.activity.ComponentActivity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.activity.EdgeToEdge;
 
@@ -41,4 +45,8 @@ public class MainActivity extends AppCompatActivity {
         // Cambiar tipo de letra
         miTexto.setTypeface(Typeface.SANS_SERIF);
     }
+
+
+
+
 }
