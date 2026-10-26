@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             display.setText(numero);
         });
 
-        // Boton AC: borrar todo
+        // Boton AC: borrar entero lo que pone
         findViewById(R.id.bac).setOnClickListener(v -> {
             numero = "0";
             display.setText(numero);
