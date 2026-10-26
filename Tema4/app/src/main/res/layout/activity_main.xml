@@ -119,6 +119,12 @@
         android:text="Encender/Apagar"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="291dp" />
+    <SeekBar
+
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="108"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
