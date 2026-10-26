@@ -105,6 +105,20 @@ public class MainActivity extends AppCompatActivity {
 
     // Evitar dos comas en el mismo numero
     private void escribirComa() {
+        if (numero.isEmpty()) {
+            numero = "0,";
+            display.setText(numero);
+            return;
+        }
+
+        char ultimo = numero.charAt(numero.length() - 1);
+
+        if (ultimo == '+' || ultimo == '-' || ultimo == '*' || ultimo == '/') {
+            numero += "0,";
+            display.setText(numero);
+            return;
+        }
+
         int posicion = ultimaOperacion();
         String actual = numero.substring(posicion + 1);
 
@@ -113,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
             display.setText(numero);
         }
     }
+
+
 
     // Buscar la ultima operacion
     private int ultimaOperacion() {
