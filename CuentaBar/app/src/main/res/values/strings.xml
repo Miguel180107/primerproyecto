@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CuentaBar</string>
+    <string name="titulo" />
+    <string name="importe" />
+    <string name="ejemplo_importe" />
+    <string name="camarero" />
+    <string name="hint_camarero" />
+    <string name="incluir_propina" />
+    <string name="propina_10" />
+    <string name="metodo_pago" />
+    <string name="efectivo" />
+    <string name="tarjeta" />
+    <string name="valoracion" />
+    <string name="calcular" />
+    <string name="resultado_inicial" />
+    <string name="propina_porcentaje" />
+    <string name="error_vacio" />
+    <string name="error_numero" />
+    <string name="error_positivo" />
+    <string name="error_pago" />
+    <string name="sin_camarero" />
+    <string name="resultado_formato" />
+</resources>
