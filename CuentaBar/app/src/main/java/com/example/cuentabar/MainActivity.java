@@ -1,6 +1,5 @@
 package com.example.cuentabar;
 
-
 import android.os.Bundle;
 import android.graphics.Color;
 import android.view.View;
@@ -50,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         ratingServicio = findViewById(R.id.ratingServicio);
         btnCalcular = findViewById(R.id.btnCalcular);
 
+        // Lista de camareros
         String[] camareros = {
                 "Carlos", "María", "Javier",
                 "Lucía", "Antonio", "Elena"
@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         edtCamarero.setAdapter(adaptador);
         edtCamarero.setThreshold(3);
 
+        // Control del porcentaje de propina
         seekPropina.setOnSeekBarChangeListener(
                 new SeekBar.OnSeekBarChangeListener() {
 
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                             SeekBar seekBar, int progress, boolean fromUser) {
 
                         porcentaje = progress;
+
                         txtPorcentaje.setText(
                                 getString(R.string.propina_porcentaje, porcentaje)
                         );
@@ -87,7 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        // Botón para calcular
         btnCalcular.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 calcularCuenta();
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         String texto = edtTotal.getText().toString().trim();
 
+        // Comprobar que no esté vacío
         if (texto.isEmpty()) {
             mostrarError(getString(R.string.error_vacio));
             return;
@@ -106,58 +111,77 @@ public class MainActivity extends AppCompatActivity {
 
         double cuenta;
 
+        // Convertir el texto a número
         try {
             texto = texto.replace(',', '.');
             cuenta = Double.parseDouble(texto);
+
         } catch (NumberFormatException e) {
             mostrarError(getString(R.string.error_numero));
             return;
         }
 
+        // Comprobar que el importe sea correcto
         if (Double.isNaN(cuenta) || Double.isInfinite(cuenta)
                 || cuenta <= 0) {
+
             mostrarError(getString(R.string.error_positivo));
             return;
         }
 
+        // Calcular propina
         double propina = 0;
 
         if (chkPropina.isChecked()) {
             propina = cuenta * porcentaje / 100.0;
         }
 
+        // Calcular total
         double total = cuenta + propina;
 
+        // Comprobar método de pago
         String metodo;
 
         if (rbEfectivo.isChecked()) {
             metodo = getString(R.string.efectivo);
+
         } else if (rbTarjeta.isChecked()) {
             metodo = getString(R.string.tarjeta);
+
         } else {
             mostrarError(getString(R.string.error_pago));
             return;
         }
 
+        // Obtener valoración
         float valoracion = ratingServicio.getRating();
 
+        // Obtener camarero
         String camarero = edtCamarero.getText().toString().trim();
 
         if (camarero.isEmpty()) {
             camarero = getString(R.string.sin_camarero);
         }
 
+        // Mostrar resultado
         String resultado = String.format(
                 Locale.getDefault(),
                 getString(R.string.resultado_formato),
-                cuenta, propina, total, metodo, valoracion, camarero
+                cuenta,
+                propina,
+                total,
+                metodo,
+                valoracion,
+                camarero
         );
 
         txtResultado.setTextColor(Color.rgb(24, 49, 83));
         txtResultado.setText(resultado);
     }
 
+    // Mostrar errores en rojo
     private void mostrarError(String mensaje) {
+
         txtResultado.setTextColor(Color.RED);
         txtResultado.setText(mensaje);
     }
